@@ -2,7 +2,10 @@
 
 克隆后，先执行``yarn``或者``npm i``
 
+之后执行
+
 ```
 npm run build-less-pug 
 ```
-将开始跟踪 *.less和*.pug文件的变化
+
+将开始跟踪 *.less和*.pug文件的变化并编译

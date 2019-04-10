@@ -1,4 +1,6 @@
 {
+    "path for product": "dist/",
+    "path for develop": "src/",
     "devDependencies": {
         "gulp": "^4.0.0",
         "gulp-less": "^4.0.1",
@@ -6,9 +8,13 @@
         "gulp-plumber": "^1.2.1",
         "gulp-pug": "^4.0.1",
         "gulp-pug-lint": "^0.1.6",
-        "gulp-rename": "^1.4.0"
+        "gulp-rename": "^1.4.0",
+        "live-server": "^1.2.1",
+        "rimraf": "^2.6.3",
+        "yargs": "^13.2.2"
     },
-    "scripts":{
-        "build-less-pug":"gulp watch-less-pug"
+    "scripts": {
+        "build": "gulp build",
+        "dev": "gulp dev --port=1823"
     }
 }

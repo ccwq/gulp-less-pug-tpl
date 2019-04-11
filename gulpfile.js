@@ -16,13 +16,14 @@ const DIST_DIR = package["path for product"];
 //目录内部文件不进行编译
 const excludeDirNameLs = package["exclude dir name list"];
 
-const golbForLess = [`${SRC_DIR}**\*.less`, `!${SRC_DIR}\@${excludeDirNameLs}\**\*.less`];
-const golbForPug = [`${SRC_DIR}**\*.pug`, `!${SRC_DIR}\@${excludeDirNameLs}\**\*.pug`];
+const golbForLess = [`${SRC_DIR}**/*.less`,     `!${SRC_DIR}@(${excludeDirNameLs})/**/*.less`];
+const golbForPug  = [`${SRC_DIR}**/*.pug`,      `!${SRC_DIR}@(${excludeDirNameLs})/**/*.pug`];
 
 const rm = require("rimraf");
 
 gulp.task(':pug', async function () {
-    await gulp.src(golbForPug) // 传入管道的文件
+    await gulp
+        .src(golbForPug) // 传入管道的文件
         .pipe(plugins.plumber())
         .pipe(plugins.pug({
             pretty: true // 默认为false，表示是否美化HTML
@@ -36,7 +37,8 @@ gulp.task(':pug', async function () {
 
 var less = require('gulp-less');
 gulp.task(":less", async function(){
-    await gulp.src(golbForLess)
+    await gulp
+        .src(golbForLess)
         .pipe(less({}))
         .pipe(gulp.dest(SRC_DIR))
     ;

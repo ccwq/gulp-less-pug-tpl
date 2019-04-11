@@ -1,6 +1,7 @@
 {
     "path for product": "dist/",
     "path for develop": "src/",
+    "exclude dir name list": "libs|lib",
     "devDependencies": {
         "gulp": "^4.0.0",
         "gulp-less": "^4.0.1",
@@ -15,6 +16,6 @@
     },
     "scripts": {
         "build": "gulp build",
-        "dev": "gulp dev --port=1823"
+        "dev": "gulp  --inspect-brk=1500 dev --port=1823"
     }
 }

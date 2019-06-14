@@ -142,7 +142,7 @@ gulp.task(":zip-dist", async function(){
 /**
  * 编译文件到设置的目录
  */
-gulp.task("build", gulp.series(":cleanDist", ":pug", ":less", ":copy", ":zip-dist"));
+gulp.task("build", gulp.series(":cleanDist", ":pug", ":less", ":es", ":copy", ":zip-dist"));
 
 
 /**
